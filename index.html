@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230912102248">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="wrapper-main-head">
+			<header class="header">
+				<div class="header__container-big">
+					<a href="" class="header__logo"><img src="img/logo.jpg" alt="logo site"></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item menu__item_f">
+									<button class="menu__btn-drop-menu"></button>
+									<a href="#" class="menu__link">Меню</a>
+									<div class="drop-menu drop-menu__hidden">
+										<ul class="drop-menu__list">
+											<li class="drop-menu__item"><a href="#">услуги</a></li>
+											<li class="drop-menu__item"><a href="#">статьи</a></li>
+											<li class="drop-menu__item"><a href="#">вакансии</a></li>
+											<li class="drop-menu__item"><a href="#">франшиза</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu__item"><a href="#" class="menu__link">портфолио</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">цена</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">схема работы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">отзывы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">контакты</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Гарантия</a></li>
+							</ul>
+						</nav>
+					</div>
+					<button data-da=".menu__list,768,7" class="header__button button">Обратный звонок</button>
+					<button type="button" class=" icon-menu"><span></span></button>
+				</div>
+			</header>
+			<main class="page">
+				<div class="main__container">
+					<div class="main__content">
+						<h1 class="main__title _anim-items">Ремонт под ключ от 2900 руб/м².</h1>
+						<div class="main__text _anim-items">При заказе ремонта делаем дизайн-проект в подарок</div>
+						<div class="main__items _anim-items">
+							<div class="main__item">
+								<img src="img/icon1.svg" alt="">
+								<span class="main__item-text">Бесплатный выезд в день обращения</span>
+							</div>
+							<div class="main__item">
+								<img src="img/icon2.svg" alt="">
+								<span class="main__item-text">Гарантия на работу до 5 лет</span>
+							</div>
+							<div class="main__item">
+								<img src="img/icon3.svg" alt="">
+								<span class="main__item-text">Жесткое соблюдение сроков</span>
+							</div>
+						</div>
+					</div>
+					<div class="main__form _anim-items">
+						<form class="form">
+
+							<h3 class="form__title">Рассчитайте стоимость ремонта</h3>
+							<div class="form__block-range">
+								<h4 class="form__title-small form__title-small_flex">Площадь квартиры:</h4>
+								<div id="slider-range-value"></div>
+								<div class="form__wrapper-range _anim-items">
+									<div id="range"></div>
+								</div>
+							</div>
+							<h4 class="form__title-small">Тип жилья:</h4>
+							<div class="form__options options form__options_one">
+								<div class="options__item">
+									<input hidden id="o_1" class="options__input" checked type="radio" value="Вторичное жилье" name="option">
+									<label for="o_1" class="options__label"><span class="options__text">Вторичное <br>
+											жилье</span></label>
+								</div>
+								<div class="options__item">
+									<input hidden id="o_2" class="options__input" type="radio" value="Новостройка" name="option">
+									<label for="o_2" class="options__label"><span class="options__text">Новостройка</span></label>
+								</div>
+								<div class="options__item">
+									<input hidden id="o_3" class="options__input" type="radio" value="Офис" name="option">
+									<label for="o_3" class="options__label"><span class="options__text">Офис</span></label>
+								</div>
+							</div>
+							<h4 class="form__title-small">Тип жилья:</h4>
+							<div class="form__options form__options_two options">
+								<div class="options__item">
+									<input hidden id="x_1" class="options__input" checked type="radio" value="1" name="option1">
+									<label for="x_1" class="options__label"><span class="options__text">1
+										</span></label>
+								</div>
+								<div class="options__item">
+									<input hidden id="x_2" class="options__input" type="radio" value="2" name="option1">
+									<label for="x_2" class="options__label"><span class="options__text">2</span></label>
+								</div>
+								<div class="options__item">
+									<input hidden id="x_3" class="options__input" type="radio" value="3+" name="option1">
+									<label for="x_3" class="options__label"><span class="options__text">3+</span></label>
+								</div>
+								<div class="options__item">
+									<input hidden id="x_4" class="options__input" type="radio" value="Студия" name="option1">
+									<label for="x_4" class="options__label"><span class="options__text">Студия</span></label>
+								</div>
+							</div>
+							<button type="submit" class="form__button button">Отправить</button>
+						</form>
+					</div>
+				</div>
+				<div class="arrow-scroll "><button class="arrow-scroll__button">
+						<div class="arrow-scroll__icon">
+							<img src="img/icons/arrow.svg" alt="">
+						</div>
+						<span class="arrow-scroll__text">scroll</span>
+					</button></div>
+			</main>
+			<div class="img"> <img src="img/pict.png" alt=""></div>
+		</div>
+		<div class="ss"></div>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<!-- 
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+
+	<script src="js/app.min.js?_v=20230912102248"></script>
+</body>
+
+</html>
