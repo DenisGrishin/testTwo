@@ -511,12 +511,12 @@
       throw new Error("noUiSlider: 'keyboardPageMultiplier' is not numeric.");
     t.keyboardPageMultiplier = e;
   }
-  function M(t, e) {
+  function _(t, e) {
     if (!f(e))
       throw new Error("noUiSlider: 'keyboardMultiplier' is not numeric.");
     t.keyboardMultiplier = e;
   }
-  function _(t, e) {
+  function M(t, e) {
     if (!f(e))
       throw new Error("noUiSlider: 'keyboardDefaultStep' is not numeric.");
     t.keyboardDefaultStep = e;
@@ -550,7 +550,7 @@
       );
     t.animationDuration = e;
   }
-  function R(t, e) {
+  function q(t, e) {
     var n,
       r = [!1];
     if (
@@ -568,7 +568,7 @@
     }
     t.connect = r;
   }
-  function q(t, e) {
+  function R(t, e) {
     switch (e) {
       case "horizontal":
         t.ort = 0;
@@ -745,16 +745,16 @@
       n = {
         step: { r: !1, t: V },
         keyboardPageMultiplier: { r: !1, t: U },
-        keyboardMultiplier: { r: !1, t: M },
-        keyboardDefaultStep: { r: !1, t: _ },
+        keyboardMultiplier: { r: !1, t: _ },
+        keyboardDefaultStep: { r: !1, t: M },
         start: { r: !0, t: O },
-        connect: { r: !0, t: R },
+        connect: { r: !0, t: q },
         direction: { r: !0, t: I },
         snap: { r: !1, t: j },
         animate: { r: !1, t: H },
         animationDuration: { r: !1, t: T },
         range: { r: !0, t: D },
-        orientation: { r: !1, t: q },
+        orientation: { r: !1, t: R },
         margin: { r: !1, t: z },
         limit: { r: !1, t: F },
         padding: { r: !1, t: B },
@@ -840,8 +840,8 @@
       L = 0,
       V = {},
       U = t.ownerDocument,
-      M = e.documentElement || U.documentElement,
-      _ = U.body,
+      _ = e.documentElement || U.documentElement,
+      M = U.body,
       D = "rtl" === U.dir || 1 === e.ort ? 0 : 100;
     function O(t, e) {
       var n = U.createElement("div");
@@ -857,7 +857,7 @@
           (o.setAttribute("tabindex", "0"),
           o.addEventListener("keydown", function (t) {
             return (function (t, n) {
-              if (R() || q(n)) return !1;
+              if (q() || R(n)) return !1;
               var r = ["Left", "Right"],
                 o = ["Down", "Up"],
                 i = ["PageDown", "PageUp"],
@@ -925,10 +925,10 @@
         O(t.firstChild, e.cssClasses.tooltip)
       );
     }
-    function R() {
+    function q() {
       return E.hasAttribute("disabled");
     }
-    function q(t) {
+    function R(t) {
       return o[t].hasAttribute("disabled");
     }
     function z() {
@@ -1136,7 +1136,7 @@
             })(i, o.pageOffset, o.target || n);
           return (
             !!l &&
-            !(R() && !o.doNotReject) &&
+            !(q() && !o.doNotReject) &&
             ((s = E),
             (a = e.cssClasses.tap),
             !(
@@ -1206,13 +1206,13 @@
     function Z(t, n) {
       n.handle && (S(n.handle, e.cssClasses.active), (L -= 1)),
         n.listeners.forEach(function (t) {
-          M.removeEventListener(t[0], t[1]);
+          _.removeEventListener(t[0], t[1]);
         }),
         0 === L &&
           (S(E, e.cssClasses.drag),
           dt(),
           t.cursor &&
-            ((_.style.cursor = ""), _.removeEventListener("selectstart", p))),
+            ((M.style.cursor = ""), M.removeEventListener("selectstart", p))),
         e.events.smoothSteps &&
           (n.handleNumbers.forEach(function (t) {
             pt(t, k[t], !0, !0, !1, !1);
@@ -1225,7 +1225,7 @@
         });
     }
     function et(t, n) {
-      if (!n.handleNumbers.some(q)) {
+      if (!n.handleNumbers.some(R)) {
         var r;
         if (1 === n.handleNumbers.length)
           (r = o[n.handleNumbers[0]].children[0]),
@@ -1233,7 +1233,7 @@
             b(r, e.cssClasses.active);
         t.stopPropagation();
         var i = [],
-          s = $(x.move, M, K, {
+          s = $(x.move, _, K, {
             target: t.target,
             handle: r,
             connect: n.connect,
@@ -1245,14 +1245,14 @@
             buttonsProperty: t.buttons,
             locations: k.slice(),
           }),
-          a = $(x.end, M, Z, {
+          a = $(x.end, _, Z, {
             target: t.target,
             handle: r,
             listeners: i,
             doNotReject: !0,
             handleNumbers: n.handleNumbers,
           }),
-          l = $("mouseout", M, J, {
+          l = $("mouseout", _, J, {
             target: t.target,
             handle: r,
             listeners: i,
@@ -1261,9 +1261,9 @@
           });
         i.push.apply(i, s.concat(a, l)),
           t.cursor &&
-            ((_.style.cursor = getComputedStyle(t.target).cursor),
+            ((M.style.cursor = getComputedStyle(t.target).cursor),
             o.length > 1 && b(E, e.cssClasses.drag),
-            _.addEventListener("selectstart", p, !1)),
+            M.addEventListener("selectstart", p, !1)),
           n.handleNumbers.forEach(function (t) {
             st("start", t);
           });
@@ -1277,7 +1277,7 @@
             n = !1;
           return (
             o.forEach(function (r, o) {
-              if (!q(o)) {
+              if (!R(o)) {
                 var i = k[o],
                   s = Math.abs(i - t);
                 (s < e || (s <= e && t > i) || (100 === s && 100 === e)) &&
@@ -1677,70 +1677,73 @@
     },
   };
   window.addEventListener("DOMContentLoaded", () => {
-    const t = document.querySelector(".menu__btn-drop-menu"),
-      e = document.querySelector(".drop-menu");
-    t.addEventListener("click", function (n) {
-      if (t.classList.contains("menu__btn-drop-menu-icon-close"))
+    const t = document.querySelector(".menu__btn"),
+      e = document.querySelector(".menu__btn-drop-icon"),
+      n = document.querySelector(".drop-menu");
+    t.addEventListener("click", function (t) {
+      if (e.classList.contains("menu__btn-drop-menu-icon-close"))
         return (
-          t.classList.remove("menu__btn-drop-menu-icon-close"),
-          t.classList.add("menu__btn-drop-menu"),
-          void e.classList.toggle("drop-menu__hidden")
+          e.classList.remove("menu__btn-drop-menu-icon-close"),
+          e.classList.add("menu__btn-drop-icon"),
+          void n.classList.add("drop-menu__hidden")
         );
-      t.classList.contains("menu__btn-drop-menu") &&
-        (t.classList.add("menu__btn-drop-menu-icon-close"),
-        t.classList.remove("menu__btn-drop-menu"),
-        e.classList.toggle("drop-menu__hidden"));
+      e.classList.contains("menu__btn-drop-icon") &&
+        (e.classList.add("menu__btn-drop-menu-icon-close"),
+        e.classList.remove("menu__btn-drop-icon"),
+        n.classList.remove("drop-menu__hidden"));
     }),
-      document.addEventListener("click", function (n) {
-        n.target === t ||
-          n.target === e ||
-          e.contains(n.target) ||
-          (t.classList.remove("menu__btn-drop-menu-icon-close"),
-          t.classList.add("menu__btn-drop-menu"),
-          e.classList.add("drop-menu__hidden"));
+      document.addEventListener("click", function (r) {
+        r.target === e ||
+          r.target === n ||
+          t.contains(r.target) ||
+          n.contains(r.target) ||
+          (e.classList.remove("menu__btn-drop-menu-icon-close"),
+          e.classList.add("menu__btn-drop-icon"),
+          n.classList.add("drop-menu__hidden"));
       });
-    let n = document.getElementById("range");
-    nt.create(n, {
+    let r = document.getElementById("range");
+    nt.create(r, {
       start: 68,
       behaviour: "snap",
       connect: [!0, !1],
       step: 1,
       range: { min: 20, max: 133 },
     });
-    let r = document.getElementById("slider-range-value");
-    n.noUiSlider.on("update", function (t, e) {
-      r.innerHTML = `${t[e]}м²`;
+    let o = document.getElementById("slider-range-value");
+    r.noUiSlider.on("update", function (t, e) {
+      o.innerHTML = `${t[e].slice(0, -3)}м²`;
     });
-    const o = document.querySelectorAll("._anim-items");
-    if (o.length > 0) {
-      function s() {
-        for (let t = 0; t < o.length; t++) {
-          const e = o[t],
+    const i = document.querySelectorAll("._anim-items");
+    if (i.length > 0) {
+      function a() {
+        for (let t = 0; t < i.length; t++) {
+          const e = i[t],
             n = e.offsetHeight,
-            r = a(e).top,
-            i = 4;
-          let s = window.innerHeight - n / i;
+            r = l(e).top,
+            o = 4;
+          let s = window.innerHeight - n / o;
           n > window.innerHeight &&
-            (s = window.innerHeight - window.innerHeight / i),
+            (s = window.innerHeight - window.innerHeight / o),
             pageYOffset > r - s && pageYOffset < r + n
               ? e.classList.add("_active")
-              : e.classList.remove("_active");
+              : e.classList.contains("_anim-no-hide") ||
+                e.classList.remove("_active");
         }
       }
-      function a(t) {
+      function l(t) {
         const e = t.getBoundingClientRect(),
           n = window.pageXOffset || document.documentElement.scrollLeft,
           r = window.pageYOffset || document.documentElement.scrollTop;
         return { top: e.top + r, left: e.left + n };
       }
-      window.addEventListener("scroll", s),
+      window.addEventListener("scroll", a),
         setTimeout(() => {
-          s();
-        }, 300);
+          a();
+        }, 100);
     }
-    const i = document.querySelector(".img");
+    const s = document.querySelector(".img");
     window.addEventListener("scroll", function () {
-      i.style.right = "-" + scrollY + "px";
+      s.style.right = "-" + scrollY + "px";
     });
     document
       .querySelector(".arrow-scroll__button")
